@@ -34,13 +34,16 @@ Get Overdue Tasks:
 Get Tasks by Status:
 9.	Endpoint: GET /api/tasks/status/{status}
 •	Description: Get a list of tasks with a specific status.
+
 Get Completed Tasks by Date Range:
 10.	Endpoint: GET /api/tasks/completed
 •	Parameters: startDate, endDate
 •	Description: Get a list of completed tasks within the specified date range.
+
 Get Tasks Statistics:
 11.	Endpoint: GET /api/tasks/statistics
 •	Description: Get statistics on the total number of tasks, the number of completed tasks, and the percentage of completed tasks.
+
 Priority-based Task Queue:
 •	Implement a priority queue for tasks based on their due dates and priority levels. The priority levels could be "High," "Medium," and "Low."
 
