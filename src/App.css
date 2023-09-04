@@ -1,38 +1,224 @@
-.App {
-  text-align: center;
+/* Root variables */
+:root {
+  --main: 'Inter', sans-serif;
+  --accent: rgb(101, 72, 216);
+  --bg-col: white;
+  --text: black;
+  --sec-text: rgb(44, 43, 43);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--main);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-wrapper {
+  padding: 6rem 3rem;
+  background-color: var(--bg-col);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.layout {
+  max-width: 25rem;
+  width: 50% !important;
+}
+
+/* Main header and sub header */
+.main-title {
+  font-size: 1.725rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.sub-title {
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--sec-text);
+}
+
+/* Input fields and labels */
+.input-label, .input-field {
+  font-size: 0.825rem;
+}
+
+.input-label {
+  font-weight: bold;
+}
+
+/* The button */
+.button-accent {
+  background: var(--accent);
+  color: var(--bg-col);
+  width: 100%;
+  height: 2.5rem;
+  font-size: 0.75rem;
+}
+
+/* Card in step three */
+.step-three-card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  cursor: pointer;
+  max-width: 14rem;
+}
+.card-accent {
+  border-color: var(--accent);
+  border-radius: 0.25rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-body p {
+  margin-right: 1.625rem;
+  font-size: 0.925rem;
+}
+
+.card-body h5 {
+  margin-right: 1.25rem;
+  font-size: 1.215rem;
+  font-weight: bold;
+}
+
+/* Overriding CSS of the library */
+.app-wrapper .MuiStep-horizontal {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.MuiStepper-root {
+  padding: 0 1.25rem !important;
+}
+.MuiStepConnector-line {
+  display: block !important;
+  width: 100% !important;
+}
+
+/* for medium screen sizes */
+@media only screen and (max-width: 1360px) and (min-width: 601px) {
+
+  .app-wrapper {
+    padding: 2rem 1.25rem;
+    background-color: var(--bg-col);
   }
-  to {
-    transform: rotate(360deg);
+  
+  .layout {
+    width: 100%;
   }
+
+  .app-wrapper .MuiStep-horizontal {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .card {
+    width: 14rem;
+    max-width: 100%;
+  }
+
+  h5 {
+    font-size: 1.225rem;
+  }
+
+  .input-label, .input-field {
+    font-size: 0.525rem;
+  }
+
+  .main-title {
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  
+  .sub-title {
+    font-size: 0.725rem;
+    font-weight: 500;
+    color: var(--sec-text);
+    text-align: left;
+  }
+
+  input {
+    width: 100%;
+  }
+  
+  .input-label, .input-field {
+    font-size: 0.785rem;
+  }
+}
+
+/* For smallest cellular devices */
+@media only screen and (max-width: 600px) {
+  .app-wrapper {
+    padding: 1rem 0rem;
+  }
+
+  .layout {
+    width: 85% !important;
+    max-width: 100%;
+  }
+
+  .main-title {
+    font-size: 1.325rem;
+    font-weight: 700;
+    color: var(--text);
+    text-align: center !important;
+  }
+  
+  .sub-title {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--sec-text);
+    text-align: center !important;
+  }
+
+  .MuiStep-horizontal {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .step-three-card {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .card {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    margin-bottom: 1rem;
+  }
+  .card:last-child {
+    margin-bottom: 0;
+  }
+  .card {
+    max-width: 100%;
+  }
+  
+  .input-label, .input-field {
+    font-size: 0.65rem;
+  }
+}
+
+
+.circle {
+  position: relative;
+  background: #3f51b5;
+  border-radius: 100%;
+  height: 70px;
+  width: 70px;
+  margin-bottom: 40px;
+}
+
+.checkMark {
+  position: absolute;
+  transform: rotate(50deg) translate(-50%, -50%);
+  left: 27%;
+  top: 43%;
+  height: 35px;
+  width: 20px;
+  border-bottom: 5px solid #fff;
+  border-right: 5px solid #fff;
 }
